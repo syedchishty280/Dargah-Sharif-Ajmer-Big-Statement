@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dargah Hazrat Khwaja Moinuddin Chishti — Statement</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Amiri:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+–gold: #C8A96E;
+–gold-light: #E8D5A3;
+–gold-pale: #F5EDD8;
+–ink: #1A1208;
+–ink-mid: #2E1F0A;
+–parchment: #FAF6ED;
+–shadow-gold: rgba(200, 169, 110, 0.15);
+}
+
+html, body {
+width: 100%; min-height: 100vh;
+background: #0E0906;
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Cormorant Garamond’, serif;
+overflow-x: hidden;
+}
+
+/* — Ambient background — */
+body::before {
+content: ‘’;
+position: fixed; inset: 0;
+background:
+radial-gradient(ellipse 60% 50% at 50% 0%, rgba(200,169,110,0.08) 0%, transparent 70%),
+radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,169,110,0.04) 0%, transparent 60%),
+radial-gradient(ellipse 40% 60% at 80% 20%, rgba(200,169,110,0.04) 0%, transparent 60%);
+pointer-events: none;
+}
+
+.outer-frame {
+position: relative;
+width: min(820px, 96vw);
+margin: 40px auto;
+padding: 3px;
+background: linear-gradient(145deg, #C8A96E, #8B6914, #C8A96E, #8B6914, #C8A96E);
+opacity: 0;
+animation: fadeIn 1.8s ease forwards 0.2s;
+}
+
+@keyframes fadeIn {
+to { opacity: 1; }
+}
+
+.inner-frame {
+position: relative;
+background: var(–parchment);
+background-image:
+url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘400’ height=‘400’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.75’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3CfeColorMatrix type=‘saturate’ values=‘0’/%3E%3C/filter%3E%3Crect width=‘400’ height=‘400’ filter=‘url(%23n)’ opacity=‘0.03’/%3E%3C/svg%3E”);
+padding: 56px 64px 60px;
+}
+
+/* inner decorative border */
+.inner-frame::before {
+content: ‘’;
+position: absolute;
+inset: 12px;
+border: 1px solid rgba(200,169,110,0.35);
+pointer-events: none;
+}
+.inner-frame::after {
+content: ‘’;
+position: absolute;
+inset: 18px;
+border: 1px solid rgba(200,169,110,0.12);
+pointer-events: none;
+}
+
+/* — Corner ornaments — */
+.corners {
+position: absolute;
+inset: 12px;
+pointer-events: none;
+}
+.corner {
+position: absolute;
+width: 28px; height: 28px;
+border-color: var(–gold);
+border-style: solid;
+opacity: 0.7;
+}
+.corner.tl { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.corner.tr { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.corner.bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.corner.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+/* — Header — */
+.header {
+text-align: center;
+margin-bottom: 36px;
+opacity: 0;
+animation: riseUp 1.2s ease forwards 0.6s;
+}
+
+@keyframes riseUp {
+from { opacity: 0; transform: translateY(12px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.bismillah {
+font-family: ‘Amiri’, serif;
+font-size: 1.55rem;
+color: var(–gold);
+letter-spacing: 0.04em;
+margin-bottom: 22px;
+display: block;
+}
+
+.divider-top {
+display: flex;
+align-items: center;
+gap: 14px;
+margin: 0 auto 20px;
+max-width: 400px;
+}
+.divider-top .line {
+flex: 1;
+height: 1px;
+background: linear-gradient(to right, transparent, var(–gold), transparent);
+}
+.divider-top .star {
+font-size: 0.7rem;
+color: var(–gold);
+letter-spacing: 0.3em;
+}
+
+.institution {
+font-family: ‘Cinzel’, serif;
+font-size: 0.62rem;
+letter-spacing: 0.3em;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 6px;
+}
+
+.shrine-name {
+font-family: ‘Cinzel’, serif;
+font-size: clamp(1rem, 2.8vw, 1.35rem);
+font-weight: 600;
+color: var(–ink);
+letter-spacing: 0.06em;
+line-height: 1.5;
+margin-bottom: 4px;
+}
+
+.shrine-sub {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 0.85rem;
+font-style: italic;
+color: #7A6040;
+letter-spacing: 0.08em;
+}
+
+/* — Main statement — */
+.statement {
+position: relative;
+text-align: center;
+margin: 0 auto 40px;
+max-width: 640px;
+opacity: 0;
+animation: riseUp 1.2s ease forwards 1.0s;
+}
+
+.opening-mark {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 5rem;
+line-height: 0.6;
+color: var(–gold);
+opacity: 0.4;
+display: block;
+margin-bottom: -8px;
+}
+
+.para {
+font-size: clamp(1.05rem, 2.5vw, 1.22rem);
+font-weight: 300;
+line-height: 1.95;
+color: var(–ink-mid);
+letter-spacing: 0.015em;
+margin-bottom: 22px;
+}
+
+.para em {
+font-style: italic;
+color: var(–ink);
+}
+
+.highlight-line {
+display: inline-block;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(1.1rem, 2.8vw, 1.32rem);
+font-weight: 600;
+font-style: italic;
+color: var(–ink);
+letter-spacing: 0.02em;
+margin: 6px 0;
+}
+
+/* — Center ornament — */
+.ornament-center {
+text-align: center;
+margin: 8px 0 28px;
+color: var(–gold);
+font-size: 0.75rem;
+letter-spacing: 0.5em;
+opacity: 0.6;
+}
+
+/* — Seal / Closing — */
+.seal-row {
+display: flex;
+align-items: center;
+gap: 24px;
+margin-top: 10px;
+opacity: 0;
+animation: riseUp 1.2s ease forwards 1.5s;
+}
+
+.seal-line {
+flex: 1;
+height: 1px;
+background: linear-gradient(to right, transparent, rgba(200,169,110,0.5));
+}
+.seal-line.rev {
+background: linear-gradient(to left, transparent, rgba(200,169,110,0.5));
+}
+
+.seal-content {
+text-align: center;
+}
+
+.seal-circle {
+width: 64px; height: 64px;
+border-radius: 50%;
+border: 1.5px solid var(–gold);
+display: flex; align-items: center; justify-content: center;
+margin: 0 auto 12px;
+position: relative;
+}
+.seal-circle::before {
+content: ‘’;
+position: absolute;
+inset: 5px;
+border-radius: 50%;
+border: 1px solid rgba(200,169,110,0.4);
+}
+.seal-star-inner {
+font-size: 1.4rem;
+color: var(–gold);
+line-height: 1;
+}
+
+.issued-by {
+font-family: ‘Cinzel’, serif;
+font-size: 0.55rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: #8B6914;
+margin-bottom: 3px;
+}
+.signatory {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 0.92rem;
+font-weight: 600;
+color: var(–ink);
+letter-spacing: 0.04em;
+}
+.signatory-role {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 0.78rem;
+font-style: italic;
+color: #7A6040;
+margin-top: 2px;
+}
+
+/* — Footer — */
+.footer-strip {
+margin-top: 36px;
+padding-top: 18px;
+border-top: 1px solid rgba(200,169,110,0.2);
+display: flex;
+justify-content: space-between;
+align-items: center;
+opacity: 0;
+animation: riseUp 1.2s ease forwards 1.8s;
+}
+
+.footer-text {
+font-family: ‘Cinzel’, serif;
+font-size: 0.5rem;
+letter-spacing: 0.2em;
+color: #A08040;
+text-transform: uppercase;
+}
+
+.footer-dots {
+color: var(–gold);
+font-size: 0.6rem;
+letter-spacing: 0.3em;
+opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+.inner-frame { padding: 40px 28px 44px; }
+.seal-row { flex-direction: column; gap: 16px; }
+.seal-line, .seal-line.rev { display: none; }
+.footer-strip { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="outer-frame">
+  <div class="inner-frame">
+
+```
+<div class="corners">
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <span class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</span>
+
+  <div class="divider-top">
+    <span class="line"></span>
+    <span class="star">✦ ✦ ✦</span>
+    <span class="line"></span>
+  </div>
+
+  <p class="institution">Office of the Gaddi Nashin &nbsp;·&nbsp; Ajmer Sharif</p>
+  <h1 class="shrine-name">Dargah Hazrat Khwaja Moinuddin Chishti (RA)</h1>
+  <p class="shrine-sub">Ajmer Sharif, Rajasthan, India &nbsp;·&nbsp; Est. 1236 CE</p>
+</div>
+
+<!-- Statement -->
+<div class="statement">
+  <span class="opening-mark">"</span>
+
+  <p class="para">
+    At the blessed threshold of Dargah Sharif,<br>
+    souls do not arrive by <em>coincidence.</em>
+  </p>
+
+  <p class="para">
+    They arrive carrying what no one else could hold for them —<br>
+    grief too deep for words, hope too fragile for reason,<br>
+    love too vast for any single faith to contain.
+  </p>
+
+  <p class="para">
+    Here, the scholar and the broken,<br>
+    the crowned and the forgotten,<br>
+    bow before the same mercy.
+  </p>
+
+  <div class="ornament-center">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+  <p class="highlight-line">One threshold. &nbsp; Every journey. &nbsp; One truth.</p>
+</div>
+
+<!-- Seal / Signatory -->
+<div class="seal-row">
+  <span class="seal-line"></span>
+
+  <div class="seal-content">
+    <div class="seal-circle">
+      <span class="seal-star-inner">✦</span>
+    </div>
+    <p class="issued-by">Issued by</p>
+    <p class="signatory">Syed Taha Hussain Chishty</p>
+    <p class="signatory-role">Gaddi Nashin, Dargah Hazrat Khwaja Moinuddin Chishti (RA)</p>
+  </div>
+
+  <span class="seal-line rev"></span>
+</div>
+
+<!-- Footer -->
+<div class="footer-strip">
+  <span class="footer-text">Chishti Order &nbsp;·&nbsp; Since 1236 CE</span>
+  <span class="footer-dots">✦ ✦ ✦</span>
+  <span class="footer-text">Humanity First &nbsp;·&nbsp; Ajmer Sharif</span>
+</div>
+```
+
+  </div>
+</div>
+
+</body>
+</html>
